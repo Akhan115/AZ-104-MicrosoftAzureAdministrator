@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "libreonlinecluster-f0fa"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "libreonlinecluster-f0fa"
+  template:
+    metadata:
+      labels:
+        app: "libreonlinecluster-f0fa"
+    spec:
+      containers:
+        - name: "libreonlinecluster-f0fa"
+          image: "libreofficeonline.azurecr.io/libreonlinecluster"
+          ports:
+          - containerPort: 80
